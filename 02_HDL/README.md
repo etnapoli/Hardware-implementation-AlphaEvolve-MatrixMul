@@ -22,4 +22,4 @@ This folder contains the Verilog/SystemVerilog source code for the project.
 ## Notes
 - Testbenches have been verified with:
   - **Questa Intel Starter FPGA Edition-64 2021.2** (bundled with **Quartus Prime 22.1 Lite**)  
-  - **TBD** (Cadence tool version)
+  - **Cadence Xcelium Simulator 20.09-s001** (bundled with Cadence)
