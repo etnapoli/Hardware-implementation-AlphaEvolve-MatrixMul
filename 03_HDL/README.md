@@ -19,6 +19,8 @@ This folder contains the Verilog/SystemVerilog source code for the project.
   - `golden_values_24bit_ver_3300_test_vectors.txt` — 24-bit input elements  
   - `golden_values_32bit_ver_3300_test_vectors.txt` — 32-bit input elements  
 
+- `README.md` — this file.  
+
 ## Notes
 - Testbenches have been verified with:
   - **Questa Intel Starter FPGA Edition-64 2021.2** (bundled with **Quartus Prime 22.1 Lite**)  
