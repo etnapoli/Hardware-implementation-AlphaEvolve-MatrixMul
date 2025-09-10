@@ -1,8 +1,8 @@
-% Scalar version of the AlphaEvolve algorithm for 4x4 complex-valued 
-% matrix multiplication.
-%
 % Author: Ettore Napoli, University of Salerno
 % Date:   2025-08
+%
+% Scalar version of the AlphaEvolve algorithm for 4x4 complex-valued 
+% matrix multiplication.
 %
 % This file contains the scalar version of the equations:
 %   C = m1·w^(1) + m2·w^(2) + ... + m48·w^(48)
@@ -61,35 +61,7 @@
 % SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 % -------------------------------------------------------------------------
 
-C1_r = -t05_r+t08_r-t11_r+t14_r-t16_r-t18_r+t28_r+t34_r+t36_r-t38_r+t39_r-t42_r-t43_r-t44_r+t47_r-t00_i+t01_i-t09_i-t11_i+t15_i+t16_i-t17_i+t18_i+t24_i-t26_i-t27_i-t30_i+t32_i+t37_i+t39_i+t40_i+t46_i;
-C1_i = -t05_i+t08_i-t11_i+t14_i-t16_i-t18_i+t28_i+t34_i+t36_i-t38_i+t39_i-t42_i-t43_i-t44_i+t47_i+t00_r-t01_r+t09_r+t11_r-t15_r-t16_r+t17_r-t18_r-t24_r+t26_r+t27_r+t30_r-t32_r-t37_r-t39_r-t40_r-t46_r;
-C2_r = +t02_r-t03_r+t05_r+t06_r-t08_r+t11_r-t12_r+t18_r+t20_r-t22_r-t28_r-t33_r-t34_r-t37_r+t44_r+t00_i+t03_i+t11_i-t13_i-t14_i-t15_i+t17_i-t18_i-t24_i+t27_i+t29_i-t32_i+t33_i-t40_i-t41_i+t43_i+t47_i;
-C2_i = +t02_i-t03_i+t05_i+t06_i-t08_i+t11_i-t12_i+t18_i+t20_i-t22_i-t28_i-t33_i-t34_i-t37_i+t44_i-t00_r-t03_r-t11_r+t13_r+t14_r+t15_r-t17_r+t18_r+t24_r-t27_r-t29_r+t32_r-t33_r+t40_r+t41_r-t43_r-t47_r;
-C3_r = -t02_r+t03_r-t05_r+t12_r-t16_r-t18_r-t20_r-t23_r-t25_r+t27_r-t31_r+t33_r+t34_r+t36_r-t38_r-t44_r+t47_r+t08_i-t11_i+t13_i+t14_i+t15_i-t19_i-t21_i+t24_i-t26_i-t30_i+t32_i-t35_i+t37_i+t39_i-t43_i;
-C3_i = -t02_i+t03_i-t05_i+t12_i-t16_i-t18_i-t20_i-t23_i-t25_i+t27_i-t31_i+t33_i+t34_i+t36_i-t38_i-t44_i+t47_i-t08_r+t11_r-t13_r-t14_r-t15_r+t19_r+t21_r-t24_r+t26_r+t30_r-t32_r+t35_r-t37_r-t39_r+t43_r;
-C4_r = -t06_r+t07_r+t08_r-t10_r-t11_r+t14_r-t21_r+t22_r+t24_r+t28_r+t37_r+t39_r-t42_r-t43_r-t00_i+t01_i-t03_i+t04_i-t09_i+t16_i-t17_i+t18_i-t27_i-t29_i+t31_i-t33_i-t34_i+t40_i+t41_i+t45_i+t46_i-t47_i;
-C4_i = -t06_i+t07_i+t08_i-t10_i-t11_i+t14_i-t21_i+t22_i+t24_i+t28_i+t37_i+t39_i-t42_i-t43_i+t00_r-t01_r+t03_r-t04_r+t09_r-t16_r+t17_r-t18_r+t27_r+t29_r-t31_r+t33_r+t34_r-t40_r-t41_r-t45_r-t46_r+t47_r;
-C5_r = -t00_r-t01_r-t05_r+t11_r-t16_r-t18_r-t24_r+t26_r-t27_r+t30_r-t32_r+t36_r-t37_r-t38_r-t39_r+t42_r-t46_r+t08_i+t09_i+t11_i+t14_i-t15_i-t16_i-t17_i+t18_i+t28_i-t34_i+t39_i-t40_i-t43_i+t44_i+t47_i;
-C5_i = -t00_i-t01_i-t05_i+t11_i-t16_i-t18_i-t24_i+t26_i-t27_i+t30_i-t32_i+t36_i-t37_i-t38_i-t39_i+t42_i-t46_i-t08_r-t09_r-t11_r-t14_r+t15_r+t16_r+t17_r-t18_r-t28_r+t34_r-t39_r+t40_r+t43_r-t44_r-t47_r;
-C6_r = +t00_r-t02_r+t03_r+t05_r+t06_r-t11_r+t12_r-t13_r-t14_r+t18_r-t22_r+t24_r+t27_r+t29_r+t32_r+t33_r-t41_r+t43_r+t47_r+t03_i-t08_i-t11_i+t15_i+t17_i-t18_i-t20_i-t28_i+t33_i+t34_i+t37_i+t40_i-t44_i;
-C6_i = +t00_i-t02_i+t03_i+t05_i+t06_i-t11_i+t12_i-t13_i-t14_i+t18_i-t22_i+t24_i+t27_i+t29_i+t32_i+t33_i-t41_i+t43_i+t47_i-t03_r+t08_r+t11_r-t15_r-t17_r+t18_r+t20_r+t28_r-t33_r-t34_r-t37_r-t40_r+t44_r;
-C7_r = +t02_r-t03_r-t05_r-t08_r-t12_r+t13_r+t14_r-t16_r-t18_r-t24_r+t26_r+t30_r-t31_r-t32_r-t33_r+t36_r-t37_r-t38_r-t43_r+t11_i-t15_i-t19_i+t20_i+t21_i-t23_i+t25_i-t27_i-t34_i+t35_i+t39_i+t44_i+t47_i;
-C7_i = +t02_i-t03_i-t05_i-t08_i-t12_i+t13_i+t14_i-t16_i-t18_i-t24_i+t26_i+t30_i-t31_i-t32_i-t33_i+t36_i-t37_i-t38_i-t43_i-t11_r+t15_r+t19_r-t20_r-t21_r+t23_r-t25_r+t27_r+t34_r-t35_r-t39_r-t44_r-t47_r;
-C8_r = -t00_r-t01_r-t04_r-t06_r-t07_r-t10_r+t11_r+t21_r+t22_r-t27_r-t29_r-t34_r-t39_r+t41_r+t42_r+t45_r-t46_r-t47_r-t03_i+t08_i+t09_i+t14_i-t16_i-t17_i+t18_i+t24_i+t28_i+t31_i-t33_i-t37_i-t40_i-t43_i;
-C8_i = -t00_i-t01_i-t04_i-t06_i-t07_i-t10_i+t11_i+t21_i+t22_i-t27_i-t29_i-t34_i-t39_i+t41_i+t42_i+t45_i-t46_i-t47_i+t03_r-t08_r-t09_r-t14_r+t16_r+t17_r-t18_r-t24_r-t28_r-t31_r+t33_r+t37_r+t40_r+t43_r;
-C9_r = +t09_r+t11_r-t15_r-t16_r+t17_r-t18_r-t24_r+t27_r-t28_r-t37_r-t39_r-t40_r-t44_r+t00_i-t01_i-t05_i+t08_i-t11_i-t14_i+t16_i-t18_i-t26_i+t30_i+t32_i+t34_i+t36_i+t38_i-t39_i+t42_i-t43_i+t46_i-t47_i;
-C9_i = +t09_i+t11_i-t15_i-t16_i+t17_i-t18_i-t24_i+t27_i-t28_i-t37_i-t39_i-t40_i-t44_i-t00_r+t01_r+t05_r-t08_r+t11_r+t14_r-t16_r+t18_r+t26_r-t30_r-t32_r-t34_r-t36_r-t38_r+t39_r-t42_r+t43_r-t46_r+t47_r;
-C10_r = -t03_r-t11_r-t14_r+t15_r-t17_r+t18_r-t20_r+t24_r-t27_r+t28_r+t33_r+t40_r-t43_r+t44_r+t47_r-t00_i-t02_i+t03_i+t05_i-t06_i-t08_i+t11_i-t12_i-t13_i+t18_i-t22_i+t29_i-t32_i-t33_i-t34_i-t37_i+t41_i;
-C10_i = -t03_i-t11_i-t14_i+t15_i-t17_i+t18_i-t20_i+t24_i-t27_i+t28_i+t33_i+t40_i-t43_i+t44_i+t47_i+t00_r+t02_r-t03_r-t05_r+t06_r+t08_r-t11_r+t12_r+t13_r-t18_r+t22_r-t29_r+t32_r+t33_r+t34_r+t37_r-t41_r;
-C11_r = +t03_r+t08_r+t14_r-t15_r-t16_r-t18_r-t19_r+t20_r+t23_r-t24_r+t25_r+t31_r-t33_r-t35_r-t37_r+t43_r-t44_r+t02_i-t05_i-t11_i+t12_i+t13_i+t21_i-t26_i-t27_i+t30_i+t32_i+t34_i+t36_i+t38_i-t39_i-t47_i;
-C11_i = +t03_i+t08_i+t14_i-t15_i-t16_i-t18_i-t19_i+t20_i+t23_i-t24_i+t25_i+t31_i-t33_i-t35_i-t37_i+t43_i-t44_i-t02_r+t05_r+t11_r-t12_r-t13_r-t21_r+t26_r+t27_r-t30_r-t32_r-t34_r-t36_r-t38_r+t39_r+t47_r;
-C12_r = +t09_r+t11_r+t17_r-t21_r+t27_r-t28_r-t34_r-t39_r-t40_r-t47_r+t00_i-t01_i-t03_i+t04_i+t06_i-t07_i+t08_i+t10_i-t14_i+t16_i-t18_i+t22_i-t24_i-t29_i+t31_i+t33_i+t37_i-t41_i+t42_i-t43_i+t45_i+t46_i;
-C12_i = +t09_i+t11_i+t17_i-t21_i+t27_i-t28_i-t34_i-t39_i-t40_i-t47_i-t00_r+t01_r+t03_r-t04_r-t06_r+t07_r-t08_r-t10_r+t14_r-t16_r+t18_r-t22_r+t24_r+t29_r-t31_r-t33_r-t37_r+t41_r-t42_r+t43_r-t45_r-t46_r;
-C13_r = +t05_r-t11_r+t16_r+t18_r+t24_r+t27_r+t28_r-t36_r+t37_r-t38_r+t39_r+t42_r-t44_r+t00_i+t01_i-t08_i-t09_i-t11_i+t14_i+t15_i-t16_i+t17_i-t18_i+t26_i-t30_i-t32_i+t34_i+t39_i+t40_i+t43_i-t46_i+t47_i;
-C13_i = +t05_i-t11_i+t16_i+t18_i+t24_i+t27_i+t28_i-t36_i+t37_i-t38_i+t39_i+t42_i-t44_i-t00_r-t01_r+t08_r+t09_r+t11_r-t14_r-t15_r+t16_r-t17_r+t18_r-t26_r+t30_r+t32_r-t34_r-t39_r-t40_r-t43_r+t46_r-t47_r;
-C14_r = -t02_r-t03_r-t05_r+t06_r+t11_r-t12_r-t14_r-t18_r-t20_r+t22_r-t24_r-t27_r-t28_r+t33_r-t43_r+t44_r+t47_r-t00_i+t03_i+t08_i+t11_i-t13_i-t15_i-t17_i+t18_i+t29_i+t32_i-t33_i-t34_i-t37_i-t40_i+t41_i;
-C14_i = -t02_i-t03_i-t05_i+t06_i+t11_i-t12_i-t14_i-t18_i-t20_i+t22_i-t24_i-t27_i-t28_i+t33_i-t43_i+t44_i+t47_i+t00_r-t03_r-t08_r-t11_r+t13_r+t15_r+t17_r-t18_r-t29_r-t32_r+t33_r+t34_r+t37_r+t40_r-t41_r;
-C15_r = +t02_r+t05_r-t08_r-t11_r+t12_r+t14_r+t20_r+t21_r-t23_r+t24_r+t25_r-t36_r+t37_r-t38_r+t39_r+t43_r-t44_r-t03_i+t13_i+t15_i-t16_i-t18_i-t19_i+t26_i-t27_i-t30_i+t31_i-t32_i+t33_i+t34_i+t35_i+t47_i;
-C15_i = +t02_i+t05_i-t08_i-t11_i+t12_i+t14_i+t20_i+t21_i-t23_i+t24_i+t25_i-t36_i+t37_i-t38_i+t39_i+t43_i-t44_i+t03_r-t13_r-t15_r+t16_r+t18_r+t19_r-t26_r+t27_r+t30_r-t31_r+t32_r-t33_r-t34_r-t35_r-t47_r;
-C16_r = +t03_r-t06_r-t07_r-t10_r+t16_r+t18_r-t22_r+t27_r+t28_r-t31_r-t33_r-t34_r+t42_r-t47_r+t00_i+t01_i-t04_i-t08_i-t09_i-t11_i+t14_i+t17_i+t21_i+t24_i-t29_i+t37_i+t39_i+t40_i-t41_i+t43_i+t45_i-t46_i;
-C16_i = +t03_i-t06_i-t07_i-t10_i+t16_i+t18_i-t22_i+t27_i+t28_i-t31_i-t33_i-t34_i+t42_i-t47_i-t00_r-t01_r+t04_r+t08_r+t09_r+t11_r-t14_r-t17_r-t21_r-t24_r+t29_r-t37_r-t39_r-t40_r+t41_r-t43_r-t45_r+t46_r;
+/*==================================================================
+The content of this file referes to a submitted scientific paper
+The actual code will be released once the paper has been reviewed
+=======================================================/*

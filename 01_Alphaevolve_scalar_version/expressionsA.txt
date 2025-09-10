@@ -1,8 +1,8 @@
-% Scalar version of the AlphaEvolve algorithm for 4x4 complex-valued 
-% matrix multiplication.
-%
 % Author: Ettore Napoli, University of Salerno
 % Date:   2025-08
+%
+% Scalar version of the AlphaEvolve algorithm for 4x4 complex-valued 
+% matrix multiplication.
 %
 % This file contains the scalar version of the equations:
 %   a_r = <u^(r), A>
@@ -50,147 +50,7 @@
 % SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 % -------------------------------------------------------------------------
 
-
-a0_r = +Areal(1)-Aimag(1)+Areal(2)-Aimag(2)+Areal(5)+Aimag(5)+Areal(6)+Aimag(6)+Areal(9)+Aimag(9)+Areal(10)+Aimag(10)+Areal(13)+Aimag(13)+Areal(14)+Aimag(14);
-a0_i = +Areal(1)+Aimag(1)+Areal(2)+Aimag(2)-Areal(5)+Aimag(5)-Areal(6)+Aimag(6)-Areal(9)+Aimag(9)-Areal(10)+Aimag(10)-Areal(13)+Aimag(13)-Areal(14)+Aimag(14);
-
-a1_r = +Areal(1)-Aimag(1)-Areal(4)-Aimag(4)+Areal(5)-Aimag(5)-Areal(8)-Aimag(8)-Areal(9)+Aimag(9)+Areal(12)+Aimag(12)+Areal(13)+Aimag(13)+Areal(16)-Aimag(16);
-a1_i = +Areal(1)+Aimag(1)+Areal(4)-Aimag(4)+Areal(5)+Aimag(5)+Areal(8)-Aimag(8)-Areal(9)-Aimag(9)-Areal(12)+Aimag(12)-Areal(13)+Aimag(13)+Areal(16)+Aimag(16);
-
-a2_r = -Areal(2)+Areal(3)+Aimag(6)-Aimag(7)-Aimag(10)+Aimag(11)+Aimag(14)-Aimag(15);
-a2_i = -Aimag(2)+Aimag(3)-Areal(6)+Areal(7)+Areal(10)-Areal(11)-Areal(14)+Areal(15);
-
-a3_r = +Aimag(1)-Areal(2)+Areal(3)-Areal(4)-Aimag(5)-Areal(6)+Areal(7)+Areal(8)+Aimag(9)-Areal(10)+Areal(11)-Areal(12)-Areal(13)+Aimag(14)-Aimag(15)-Aimag(16);
-a3_i = -Areal(1)-Aimag(2)+Aimag(3)-Aimag(4)+Areal(5)-Aimag(6)+Aimag(7)+Aimag(8)-Areal(9)-Aimag(10)+Aimag(11)-Aimag(12)-Aimag(13)-Areal(14)+Areal(15)+Areal(16);
-
-a4_r = +Areal(1)-Aimag(1)-Areal(2)+Aimag(2)-Areal(5)-Aimag(5)+Areal(6)+Aimag(6)-Areal(9)-Aimag(9)+Areal(10)+Aimag(10)+Areal(13)+Aimag(13)-Areal(14)-Aimag(14);
-a4_i = +Areal(1)+Aimag(1)-Areal(2)-Aimag(2)+Areal(5)-Aimag(5)-Areal(6)+Aimag(6)+Areal(9)-Aimag(9)-Areal(10)+Aimag(10)-Areal(13)+Aimag(13)+Areal(14)-Aimag(14);
-
-a5_r = +Areal(3)+Aimag(3)-Areal(4)+Aimag(4)+Areal(7)+Aimag(7)-Areal(8)+Aimag(8)-Areal(11)-Aimag(11)+Areal(12)-Aimag(12)-Areal(15)+Aimag(15)-Areal(16)-Aimag(16);
-a5_i = -Areal(3)+Aimag(3)-Areal(4)-Aimag(4)-Areal(7)+Aimag(7)-Areal(8)-Aimag(8)+Areal(11)-Aimag(11)+Areal(12)+Aimag(12)-Areal(15)-Aimag(15)+Areal(16)-Aimag(16);
-
-a6_r = -Aimag(1)+Areal(4)-Areal(5)-Aimag(8)+Areal(9)+Aimag(12)-Areal(13)-Aimag(16);
-a6_i = +Areal(1)+Aimag(4)-Aimag(5)+Areal(8)+Aimag(9)-Areal(12)-Aimag(13)+Areal(16);
-
-a7_r = +Areal(1)-Aimag(1)-Areal(2)+Aimag(2)-Areal(5)+Aimag(5)+Areal(6)-Aimag(6)-Areal(9)+Aimag(9)+Areal(10)-Aimag(10)-Areal(13)-Aimag(13)+Areal(14)+Aimag(14);
-a7_i = +Areal(1)+Aimag(1)-Areal(2)-Aimag(2)-Areal(5)-Aimag(5)+Areal(6)+Aimag(6)-Areal(9)-Aimag(9)+Areal(10)+Aimag(10)+Areal(13)-Aimag(13)-Areal(14)+Aimag(14);
-
-a8_r = +Aimag(1)+Aimag(2)-Areal(3)+Aimag(4)+Areal(5)+Areal(6)+Aimag(7)+Areal(8)-Areal(9)-Areal(10)+Aimag(11)+Areal(12)+Areal(13)+Areal(14)-Aimag(15)-Areal(16);
-a8_i = -Areal(1)-Areal(2)-Aimag(3)-Areal(4)+Aimag(5)+Aimag(6)-Areal(7)+Aimag(8)-Aimag(9)-Aimag(10)-Areal(11)+Aimag(12)+Aimag(13)+Aimag(14)+Areal(15)-Aimag(16);
-
-a9_r = -Areal(1)-Aimag(1)-Areal(4)+Aimag(4)+Areal(5)-Aimag(5)-Areal(8)-Aimag(8)-Areal(9)+Aimag(9)+Areal(12)+Aimag(12)-Areal(13)+Aimag(13)+Areal(16)+Aimag(16);
-a9_i = +Areal(1)-Aimag(1)-Areal(4)-Aimag(4)+Areal(5)+Aimag(5)+Areal(8)-Aimag(8)-Areal(9)-Aimag(9)-Areal(12)+Aimag(12)-Areal(13)-Aimag(13)-Areal(16)+Aimag(16);
-
-a10_r = -Areal(1)-Aimag(1)+Areal(2)+Aimag(2)-Areal(5)-Aimag(5)+Areal(6)+Aimag(6)+Areal(9)+Aimag(9)-Areal(10)-Aimag(10)+Areal(13)-Aimag(13)-Areal(14)+Aimag(14);
-a10_i = +Areal(1)-Aimag(1)-Areal(2)+Aimag(2)+Areal(5)-Aimag(5)-Areal(6)+Aimag(6)-Areal(9)+Aimag(9)+Areal(10)-Aimag(10)+Areal(13)+Aimag(13)-Areal(14)-Aimag(14);
-
-a11_r = +Areal(1)+Areal(2)+Aimag(3)-Areal(4)-Areal(5)-Areal(6)-Aimag(7)+Areal(8)+Areal(9)+Areal(10)-Aimag(11)+Areal(12)+Aimag(13)+Aimag(14)+Areal(15)+Aimag(16);
-a11_i = +Aimag(1)+Aimag(2)-Areal(3)-Aimag(4)-Aimag(5)-Aimag(6)+Areal(7)+Aimag(8)+Aimag(9)+Aimag(10)+Areal(11)+Aimag(12)-Areal(13)-Areal(14)+Aimag(15)-Areal(16);
-
-a12_r = +Areal(2)-Aimag(2)-Areal(3)+Aimag(3)-Areal(6)-Aimag(6)+Areal(7)+Aimag(7)-Areal(10)-Aimag(10)+Areal(11)+Aimag(11)+Areal(14)+Aimag(14)-Areal(15)-Aimag(15);
-a12_i = +Areal(2)+Aimag(2)-Areal(3)-Aimag(3)+Areal(6)-Aimag(6)-Areal(7)+Aimag(7)+Areal(10)-Aimag(10)-Areal(11)+Aimag(11)-Areal(14)+Aimag(14)+Areal(15)-Aimag(15);
-
-a13_r = +Areal(2)+Aimag(2)-Areal(3)-Aimag(3)+Areal(6)+Aimag(6)-Areal(7)-Aimag(7)+Areal(10)+Aimag(10)-Areal(11)-Aimag(11)+Areal(14)-Aimag(14)-Areal(15)+Aimag(15);
-a13_i = -Areal(2)+Aimag(2)+Areal(3)-Aimag(3)-Areal(6)+Aimag(6)+Areal(7)-Aimag(7)-Areal(10)+Aimag(10)+Areal(11)-Aimag(11)+Areal(14)+Aimag(14)-Areal(15)-Aimag(15);
-
-a14_r = -Aimag(1)-Areal(2)+Areal(3)-Areal(4)+Areal(5)+Aimag(6)-Aimag(7)-Aimag(8)+Areal(9)-Aimag(10)+Aimag(11)-Aimag(12)+Areal(13)+Aimag(14)-Aimag(15)-Aimag(16);
-a14_i = +Areal(1)-Aimag(2)+Aimag(3)-Aimag(4)+Aimag(5)-Areal(6)+Areal(7)+Areal(8)+Aimag(9)+Areal(10)-Areal(11)+Areal(12)+Aimag(13)-Areal(14)+Areal(15)+Areal(16);
-
-a15_r = -Areal(3)-Aimag(3)+Areal(4)-Aimag(4)+Areal(7)+Aimag(7)-Areal(8)+Aimag(8)+Areal(11)+Aimag(11)-Areal(12)+Aimag(12)-Areal(15)+Aimag(15)-Areal(16)-Aimag(16);
-a15_i = +Areal(3)-Aimag(3)+Areal(4)+Aimag(4)-Areal(7)+Aimag(7)-Areal(8)-Aimag(8)-Areal(11)+Aimag(11)-Areal(12)-Aimag(12)-Areal(15)-Aimag(15)+Areal(16)-Aimag(16);
-
-a16_r = -Areal(1)-Aimag(2)-Aimag(3)+Aimag(4)-Areal(5)+Aimag(6)+Aimag(7)+Aimag(8)-Areal(9)-Aimag(10)-Aimag(11)+Aimag(12)+Aimag(13)+Areal(14)+Areal(15)+Areal(16);
-a16_i = -Aimag(1)+Areal(2)+Areal(3)-Areal(4)-Aimag(5)-Areal(6)-Areal(7)-Areal(8)-Aimag(9)+Areal(10)+Areal(11)-Areal(12)-Areal(13)+Aimag(14)+Aimag(15)+Aimag(16);
-
-a17_r = +Areal(1)-Aimag(1)+Areal(2)-Aimag(2)+Areal(5)-Aimag(5)+Areal(6)-Aimag(6)+Areal(9)-Aimag(9)+Areal(10)-Aimag(10)-Areal(13)-Aimag(13)-Areal(14)-Aimag(14);
-a17_i = +Areal(1)+Aimag(1)+Areal(2)+Aimag(2)+Areal(5)+Aimag(5)+Areal(6)+Aimag(6)+Areal(9)+Aimag(9)+Areal(10)+Aimag(10)+Areal(13)-Aimag(13)+Areal(14)-Aimag(14);
-
-a18_r = -Aimag(1)-Aimag(2)-Areal(3)-Aimag(4)-Aimag(5)-Aimag(6)-Areal(7)-Aimag(8)-Aimag(9)-Aimag(10)+Areal(11)+Aimag(12)-Areal(13)-Areal(14)-Aimag(15)+Areal(16);
-a18_i = +Areal(1)+Areal(2)-Aimag(3)+Areal(4)+Areal(5)+Areal(6)-Aimag(7)+Areal(8)+Areal(9)+Areal(10)+Aimag(11)-Areal(12)-Aimag(13)-Aimag(14)+Areal(15)+Aimag(16);
-
-a19_r = +Areal(3)+Aimag(3)+Areal(4)-Aimag(4)+Areal(7)+Aimag(7)+Areal(8)-Aimag(8)+Areal(11)+Aimag(11)+Areal(12)-Aimag(12)+Areal(15)-Aimag(15)-Areal(16)-Aimag(16);
-a19_i = -Areal(3)+Aimag(3)+Areal(4)+Aimag(4)-Areal(7)+Aimag(7)+Areal(8)+Aimag(8)-Areal(11)+Aimag(11)+Areal(12)+Aimag(12)+Areal(15)+Aimag(15)+Areal(16)-Aimag(16);
-
-a20_r = +Areal(2)-Aimag(2)-Areal(3)+Aimag(3)+Areal(6)-Aimag(6)-Areal(7)+Aimag(7)-Areal(10)+Aimag(10)+Areal(11)-Aimag(11)+Areal(14)+Aimag(14)-Areal(15)-Aimag(15);
-a20_i = +Areal(2)+Aimag(2)-Areal(3)-Aimag(3)+Areal(6)+Aimag(6)-Areal(7)-Aimag(7)-Areal(10)-Aimag(10)+Areal(11)+Aimag(11)-Areal(14)+Aimag(14)+Areal(15)-Aimag(15);
-
-a21_r = -Aimag(1)+Aimag(2)-Areal(3)+Aimag(4)+Aimag(5)-Aimag(6)+Areal(7)-Aimag(8)+Aimag(9)-Aimag(10)-Areal(11)+Aimag(12)-Areal(13)+Areal(14)-Aimag(15)-Areal(16);
-a21_i = +Areal(1)-Areal(2)-Aimag(3)-Areal(4)-Areal(5)+Areal(6)+Aimag(7)+Areal(8)-Areal(9)+Areal(10)-Aimag(11)-Areal(12)-Aimag(13)+Aimag(14)+Areal(15)-Aimag(16);
-
-a22_r = -Areal(1)+Aimag(1)-Areal(4)-Aimag(4)+Areal(5)+Aimag(5)-Areal(8)+Aimag(8)+Areal(9)+Aimag(9)-Areal(12)+Aimag(12)-Areal(13)-Aimag(13)+Areal(16)-Aimag(16);
-a22_i = -Areal(1)-Aimag(1)+Areal(4)-Aimag(4)-Areal(5)+Aimag(5)-Areal(8)-Aimag(8)-Areal(9)+Aimag(9)-Areal(12)-Aimag(12)+Areal(13)-Aimag(13)+Areal(16)+Aimag(16);
-
-a23_r = -Areal(3)+Aimag(3)+Areal(4)+Aimag(4)+Areal(7)+Aimag(7)+Areal(8)-Aimag(8)+Areal(11)+Aimag(11)+Areal(12)-Aimag(12)-Areal(15)-Aimag(15)-Areal(16)+Aimag(16);
-a23_i = -Areal(3)-Aimag(3)-Areal(4)+Aimag(4)-Areal(7)+Aimag(7)+Areal(8)+Aimag(8)-Areal(11)+Aimag(11)+Areal(12)+Aimag(12)+Areal(15)-Aimag(15)-Areal(16)-Aimag(16);
-
-a24_r = -Areal(1)+Areal(2)+Aimag(3)-Areal(4)+Aimag(5)-Aimag(6)+Areal(7)+Aimag(8)+Aimag(9)-Aimag(10)-Areal(11)-Aimag(12)-Aimag(13)+Aimag(14)+Areal(15)+Aimag(16);
-a24_i = -Aimag(1)+Aimag(2)-Areal(3)-Aimag(4)-Areal(5)+Areal(6)+Aimag(7)-Areal(8)-Areal(9)+Areal(10)-Aimag(11)+Areal(12)+Areal(13)-Areal(14)+Aimag(15)-Areal(16);
-
-a25_r = +Areal(3)+Aimag(3)+Areal(4)-Aimag(4)-Areal(7)+Aimag(7)+Areal(8)+Aimag(8)+Areal(11)-Aimag(11)-Areal(12)-Aimag(12)+Areal(15)-Aimag(15)-Areal(16)-Aimag(16);
-a25_i = -Areal(3)+Aimag(3)+Areal(4)+Aimag(4)-Areal(7)-Aimag(7)-Areal(8)+Aimag(8)+Areal(11)+Aimag(11)+Areal(12)-Aimag(12)+Areal(15)+Aimag(15)+Areal(16)-Aimag(16);
-
-a26_r = +Areal(2)-Aimag(2)+Areal(3)-Aimag(3)-Areal(6)+Aimag(6)-Areal(7)+Aimag(7)+Areal(10)-Aimag(10)+Areal(11)-Aimag(11)+Areal(14)+Aimag(14)+Areal(15)+Aimag(15);
-a26_i = +Areal(2)+Aimag(2)+Areal(3)+Aimag(3)-Areal(6)-Aimag(6)-Areal(7)-Aimag(7)+Areal(10)+Aimag(10)+Areal(11)+Aimag(11)-Areal(14)+Aimag(14)-Areal(15)+Aimag(15);
-
-a27_r = +Aimag(1)+Aimag(2)+Areal(3)-Aimag(4)-Areal(5)-Areal(6)+Aimag(7)+Areal(8)-Areal(9)-Areal(10)-Aimag(11)-Areal(12)-Areal(13)-Areal(14)-Aimag(15)-Areal(16);
-a27_i = -Areal(1)-Areal(2)+Aimag(3)+Areal(4)-Aimag(5)-Aimag(6)-Areal(7)+Aimag(8)-Aimag(9)-Aimag(10)+Areal(11)-Aimag(12)-Aimag(13)-Aimag(14)+Areal(15)-Aimag(16);
-
-a28_r = -Areal(1)-Aimag(1)-Areal(2)-Aimag(2)-Areal(5)+Aimag(5)-Areal(6)+Aimag(6)+Areal(9)-Aimag(9)+Areal(10)-Aimag(10)-Areal(13)+Aimag(13)-Areal(14)+Aimag(14);
-a28_i = +Areal(1)-Aimag(1)+Areal(2)-Aimag(2)-Areal(5)-Aimag(5)-Areal(6)-Aimag(6)+Areal(9)+Aimag(9)+Areal(10)+Aimag(10)-Areal(13)-Aimag(13)-Areal(14)-Aimag(14);
-
-a29_r = +Areal(1)-Aimag(1)+Areal(4)+Aimag(4)-Areal(5)+Aimag(5)-Areal(8)-Aimag(8)+Areal(9)-Aimag(9)+Areal(12)+Aimag(12)+Areal(13)+Aimag(13)-Areal(16)+Aimag(16);
-a29_i = +Areal(1)+Aimag(1)-Areal(4)+Aimag(4)-Areal(5)-Aimag(5)+Areal(8)-Aimag(8)+Areal(9)+Aimag(9)-Areal(12)+Aimag(12)-Areal(13)+Aimag(13)-Areal(16)-Aimag(16);
-
-a30_r = +Areal(2)-Aimag(2)+Areal(3)-Aimag(3)-Areal(6)+Aimag(6)-Areal(7)+Aimag(7)-Areal(10)+Aimag(10)-Areal(11)+Aimag(11)-Areal(14)-Aimag(14)-Areal(15)-Aimag(15);
-a30_i = +Areal(2)+Aimag(2)+Areal(3)+Aimag(3)-Areal(6)-Aimag(6)-Areal(7)-Aimag(7)-Areal(10)-Aimag(10)-Areal(11)-Aimag(11)+Areal(14)-Aimag(14)+Areal(15)-Aimag(15);
-
-a31_r = +Areal(1)-Areal(2)+Aimag(3)+Areal(4)+Areal(5)-Areal(6)+Aimag(7)+Areal(8)-Areal(9)+Areal(10)+Aimag(11)+Areal(12)+Aimag(13)-Aimag(14)+Areal(15)-Aimag(16);
-a31_i = +Aimag(1)-Aimag(2)-Areal(3)+Aimag(4)+Aimag(5)-Aimag(6)-Areal(7)+Aimag(8)-Aimag(9)+Aimag(10)-Areal(11)+Aimag(12)-Areal(13)+Areal(14)+Aimag(15)+Areal(16);
-
-a32_r = +Areal(3)-Aimag(3)+Areal(4)+Aimag(4)-Areal(7)-Aimag(7)+Areal(8)-Aimag(8)+Areal(11)+Aimag(11)-Areal(12)+Aimag(12)-Areal(15)-Aimag(15)+Areal(16)-Aimag(16);
-a32_i = +Areal(3)+Aimag(3)-Areal(4)+Aimag(4)+Areal(7)-Aimag(7)+Areal(8)+Aimag(8)-Areal(11)+Aimag(11)-Areal(12)-Aimag(12)+Areal(15)-Aimag(15)+Areal(16)+Aimag(16);
-
-a33_r = +Areal(1)-Aimag(2)+Aimag(3)+Aimag(4)-Areal(5)-Aimag(6)+Aimag(7)-Aimag(8)-Areal(9)+Aimag(10)-Aimag(11)-Aimag(12)-Aimag(13)+Areal(14)-Areal(15)+Areal(16);
-a33_i = +Aimag(1)+Areal(2)-Areal(3)-Areal(4)-Aimag(5)+Areal(6)-Areal(7)+Areal(8)-Aimag(9)-Areal(10)+Areal(11)+Areal(12)+Areal(13)+Aimag(14)-Aimag(15)+Aimag(16);
-
-a34_r = +Aimag(1)-Aimag(2)-Areal(3)-Aimag(4)-Areal(5)+Areal(6)-Aimag(7)+Areal(8)+Areal(9)-Areal(10)-Aimag(11)+Areal(12)+Areal(13)-Areal(14)-Aimag(15)+Areal(16);
-a34_i = -Areal(1)+Areal(2)-Aimag(3)+Areal(4)-Aimag(5)+Aimag(6)+Areal(7)+Aimag(8)+Aimag(9)-Aimag(10)+Areal(11)+Aimag(12)+Aimag(13)-Aimag(14)+Areal(15)+Aimag(16);
-
-a35_r = +Areal(3)+Aimag(3)+Areal(4)-Aimag(4)-Areal(7)-Aimag(7)-Areal(8)+Aimag(8)+Areal(11)+Aimag(11)+Areal(12)-Aimag(12)-Areal(15)+Aimag(15)+Areal(16)+Aimag(16);
-a35_i = -Areal(3)+Aimag(3)+Areal(4)+Aimag(4)+Areal(7)-Aimag(7)-Areal(8)-Aimag(8)-Areal(11)+Aimag(11)+Areal(12)+Aimag(12)-Areal(15)-Aimag(15)-Areal(16)+Aimag(16);
-
-a36_r = -Areal(2)+Aimag(2)-Areal(3)+Aimag(3)-Areal(6)-Aimag(6)-Areal(7)-Aimag(7)+Areal(10)+Aimag(10)+Areal(11)+Aimag(11)+Areal(14)+Aimag(14)+Areal(15)+Aimag(15);
-a36_i = -Areal(2)-Aimag(2)-Areal(3)-Aimag(3)+Areal(6)-Aimag(6)+Areal(7)-Aimag(7)-Areal(10)+Aimag(10)-Areal(11)+Aimag(11)-Areal(14)+Aimag(14)-Areal(15)+Aimag(15);
-
-a37_r = +Areal(1)+Aimag(2)+Aimag(3)+Aimag(4)-Aimag(5)-Areal(6)-Areal(7)+Areal(8)-Aimag(9)+Areal(10)+Areal(11)+Areal(12)+Aimag(13)+Areal(14)+Areal(15)-Areal(16);
-a37_i = +Aimag(1)-Areal(2)-Areal(3)-Areal(4)+Areal(5)-Aimag(6)-Aimag(7)+Aimag(8)+Areal(9)+Aimag(10)+Aimag(11)+Aimag(12)-Areal(13)+Aimag(14)+Aimag(15)-Aimag(16);
-
-a38_r = +Areal(2)+Aimag(2)+Areal(3)+Aimag(3)-Areal(6)+Aimag(6)-Areal(7)+Aimag(7)-Areal(10)+Aimag(10)-Areal(11)+Aimag(11)-Areal(14)+Aimag(14)-Areal(15)+Aimag(15);
-a38_i = -Areal(2)+Aimag(2)-Areal(3)+Aimag(3)-Areal(6)-Aimag(6)-Areal(7)-Aimag(7)-Areal(10)-Aimag(10)-Areal(11)-Aimag(11)-Areal(14)-Aimag(14)-Areal(15)-Aimag(15);
-
-a39_r = -Areal(1)+Aimag(2)+Aimag(3)+Aimag(4)-Areal(5)-Aimag(6)-Aimag(7)+Aimag(8)+Areal(9)-Aimag(10)-Aimag(11)-Aimag(12)-Aimag(13)+Areal(14)+Areal(15)-Areal(16);
-a39_i = -Aimag(1)-Areal(2)-Areal(3)-Areal(4)-Aimag(5)+Areal(6)+Areal(7)-Areal(8)+Aimag(9)+Areal(10)+Areal(11)+Areal(12)+Areal(13)+Aimag(14)+Aimag(15)-Aimag(16);
-
-a40_r = -Areal(1)+Aimag(1)-Areal(2)+Aimag(2)+Areal(5)-Aimag(5)+Areal(6)-Aimag(6)-Areal(9)+Aimag(9)-Areal(10)+Aimag(10)-Areal(13)-Aimag(13)-Areal(14)-Aimag(14);
-a40_i = -Areal(1)-Aimag(1)-Areal(2)-Aimag(2)+Areal(5)+Aimag(5)+Areal(6)+Aimag(6)-Areal(9)-Aimag(9)-Areal(10)-Aimag(10)+Areal(13)-Aimag(13)+Areal(14)-Aimag(14);
-
-a41_r = +Areal(1)+Aimag(1)-Areal(4)+Aimag(4)-Areal(5)-Aimag(5)+Areal(8)-Aimag(8)-Areal(9)-Aimag(9)+Areal(12)-Aimag(12)+Areal(13)-Aimag(13)+Areal(16)+Aimag(16);
-a41_i = -Areal(1)+Aimag(1)-Areal(4)-Aimag(4)+Areal(5)-Aimag(5)+Areal(8)+Aimag(8)+Areal(9)-Aimag(9)+Areal(12)+Aimag(12)+Areal(13)+Aimag(13)-Areal(16)+Aimag(16);
-
-a42_r = +Areal(1)-Aimag(1)-Areal(4)-Aimag(4)+Areal(5)+Aimag(5)+Areal(8)-Aimag(8)+Areal(9)+Aimag(9)+Areal(12)-Aimag(12)+Areal(13)+Aimag(13)+Areal(16)-Aimag(16);
-a42_i = +Areal(1)+Aimag(1)+Areal(4)-Aimag(4)-Areal(5)+Aimag(5)+Areal(8)+Aimag(8)-Areal(9)+Aimag(9)+Areal(12)+Aimag(12)-Areal(13)+Aimag(13)+Areal(16)+Aimag(16);
-
-a43_r = -Aimag(1)+Areal(2)-Areal(3)-Areal(4)+Areal(5)-Aimag(6)+Aimag(7)-Aimag(8)-Areal(9)-Aimag(10)+Aimag(11)+Aimag(12)-Areal(13)+Aimag(14)-Aimag(15)+Aimag(16);
-a43_i = +Areal(1)+Aimag(2)-Aimag(3)-Aimag(4)+Aimag(5)+Areal(6)-Areal(7)+Areal(8)-Aimag(9)+Areal(10)-Areal(11)-Areal(12)-Aimag(13)-Areal(14)+Areal(15)-Areal(16);
-
-a44_r = +Areal(3)+Aimag(3)-Areal(4)+Aimag(4)-Areal(7)+Aimag(7)-Areal(8)-Aimag(8)-Areal(11)+Aimag(11)-Areal(12)-Aimag(12)-Areal(15)+Aimag(15)-Areal(16)-Aimag(16);
-a44_i = -Areal(3)+Aimag(3)-Areal(4)-Aimag(4)-Areal(7)-Aimag(7)+Areal(8)-Aimag(8)-Areal(11)-Aimag(11)+Areal(12)-Aimag(12)-Areal(15)-Aimag(15)+Areal(16)-Aimag(16);
-
-a45_r = -Areal(1)-Aimag(1)+Areal(2)+Aimag(2)+Areal(5)-Aimag(5)-Areal(6)+Aimag(6)-Areal(9)+Aimag(9)+Areal(10)-Aimag(10)-Areal(13)+Aimag(13)+Areal(14)-Aimag(14);
-a45_i = +Areal(1)-Aimag(1)-Areal(2)+Aimag(2)+Areal(5)+Aimag(5)-Areal(6)-Aimag(6)-Areal(9)-Aimag(9)+Areal(10)+Aimag(10)-Areal(13)-Aimag(13)+Areal(14)+Aimag(14);
-
-a46_r = +Areal(1)+Aimag(1)+Areal(4)-Aimag(4)+Areal(5)+Aimag(5)+Areal(8)-Aimag(8)+Areal(9)+Aimag(9)+Areal(12)-Aimag(12)+Areal(13)-Aimag(13)-Areal(16)-Aimag(16);
-a46_i = -Areal(1)+Aimag(1)+Areal(4)+Aimag(4)-Areal(5)+Aimag(5)+Areal(8)+Aimag(8)-Areal(9)+Aimag(9)+Areal(12)+Aimag(12)+Areal(13)+Aimag(13)+Areal(16)-Aimag(16);
-
-a47_r = +Areal(1)-Aimag(2)-Aimag(3)+Aimag(4)-Aimag(5)+Areal(6)+Areal(7)+Areal(8)+Aimag(9)+Areal(10)+Areal(11)-Areal(12)-Aimag(13)+Areal(14)+Areal(15)+Areal(16);
-a47_i = +Aimag(1)+Areal(2)+Areal(3)-Areal(4)+Areal(5)+Aimag(6)+Aimag(7)+Aimag(8)-Areal(9)+Aimag(10)+Aimag(11)-Aimag(12)+Areal(13)+Aimag(14)+Aimag(15)+Aimag(16);
+/*==================================================================
+The content of this file referes to a submitted scientific paper.
+The actual code will be released once the paper has been reviewed
+=======================================================/*

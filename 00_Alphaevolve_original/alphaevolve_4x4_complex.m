@@ -1,3 +1,6 @@
+% Author: Ettore Napoli, University of Salerno
+% Date:   2025-08
+%
 % The algorithm is the matlab version of the Alphaevolve algorithm
 % published in: 
 % A. Novikov, N. V˜u, M. Eisenberger, E. Dupont, P.-S. Huang, A. Z.
@@ -7,7 +10,7 @@
 % for scientific and algorithmic discovery,” 2025. [Online]. Available:
 % https://arxiv.org/abs/2506.13131
 % 
-% whise results are in the colab 
+% while the results are in the colab: 
 % 
 % G. DeepMind, “Alphaevolve: Mathematical results,” 2025.
 % [Online]. Available: https://colab.research.google.com/github/google-
@@ -18,6 +21,29 @@
 % F. Bakreski, “Alphaevolve-matrixmul-verification,” https://github.com/
 % PhialsBasement/AlphaEvolve-MatrixMul-Verification, 2025, accessed:
 % 2025-08-10. [Online]. Available: https://github.com/PhialsBasement/
+%
+% -------------------------------------------------------------------------
+% License:
+% This code is released under the MIT License.
+% 
+% Permission is hereby granted, free of charge, to any person obtaining a 
+% copy of this software and associated documentation files (the "Software"), 
+% to deal in the Software without restriction, including without limitation 
+% the rights to use, copy, modify, merge, publish, distribute, sublicense, 
+% and/or sell copies of the Software, and to permit persons to whom the 
+% Software is furnished to do so, subject to the following conditions:
+%
+% The above copyright notice and this permission notice shall be included 
+% in all copies or substantial portions of the Software.
+%
+% THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+% EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF 
+% MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. 
+% IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY 
+% CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, 
+% TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE 
+% SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+% -------------------------------------------------------------------------
 
 function C = alphaevolve_4x4_complex(A, B)
 % AlphaEvolve's optimized algorithm for 4×4 matrices.
