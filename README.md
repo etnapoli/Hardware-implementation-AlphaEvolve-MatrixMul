@@ -10,9 +10,11 @@ Verilog code and MATLAB scripts for the hardware implementation of the **4×4 Ra
 
 - `02_Common_Subexpression_Elimination/` — Hardware-optimized equations derived from `01_Alphaevolve_scalar_version` using a **Common Subexpression Elimination (CSE)** algorithm.  
 
-- `03_HDL_AlpohaEvolve_algorithm/` — SystemVerilog source files and testbenches for the complete matrix multiplication circuit.  
+- `03_HDL_AlphaEvolve_algorithm/` — SystemVerilog source files and testbenches for the complete matrix multiplication circuit.  
 
-- `04_HDL_naive_algorithm/` — SystemVerilog source files and testbenches for the implementation of the naive algorithm for matrix multiplication used as a base test for the AlphaEvolve implementation.  
+- `04_HDL_Strassen_algorithm/` — SystemVerilog source files and testbenches for the reference implementation of the Strassen algorithm for complex valued matrix multiplication.  
+
+- `05_HDL_naive_algorithm/` — SystemVerilog source files and testbenches for the implementation of the naive algorithm for matrix multiplication used as a base test for the AlphaEvolve implementation.  
 
 - `LICENSE` — License file for the entire repository.  
 

@@ -1,0 +1,6 @@
+FILES HIDDEN.
+
+directory o1 - the three scalar versions of the algorithm
+directory 02_CSE - the three files with CSE expressions
+directory 03_HDL  - the description of the circuit
+directory 04_HDL  - the description of the circuit
