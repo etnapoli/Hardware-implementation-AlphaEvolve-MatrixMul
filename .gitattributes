@@ -1,3 +1,1 @@
-03_HDL_AlphaEvolve_algorithm/Test_Vectors_files/*.txt filter=lfs diff=lfs merge=lfs -text
-04_HDL_Strassen_algorithm/Test_Vectors_files/*.txt filter=lfs diff=lfs merge=lfs -text
-05_HDL_naive_algorithm/Test_Vectors_files/*.txt filter=lfs diff=lfs merge=lfs -text
+06_Test_vector_files/*.txt filter=lfs diff=lfs merge=lfs -text
