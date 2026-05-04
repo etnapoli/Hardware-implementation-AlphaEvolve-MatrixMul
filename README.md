@@ -16,6 +16,8 @@ Verilog code and MATLAB scripts for the hardware implementation of the **4×4 Ra
 
 - `05_HDL_naive_algorithm/` — SystemVerilog source files and testbenches for the implementation of the naive algorithm for matrix multiplication used as a base test for the AlphaEvolve implementation.  
 
+- `06_Test_vector_files/` —  Directory containing the test vector files for varying bit widths of the circuits 
+
 - `LICENSE` — License file for the entire repository.  
 
 - `README.md` — This file.  
