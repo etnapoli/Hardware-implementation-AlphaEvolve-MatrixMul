@@ -1,6 +1,8 @@
 # Hardware-Implementation-AlphaEvolve-MatrixMul
 
-Verilog code and MATLAB scripts for the hardware implementation of the **4×4 Rank-48 AlphaEvolve matrix multiplication over the 0.5C algorithm**.  
+Verilog code and MATLAB scripts for the hardware implementation of the **4×4 Rank-48 AlphaEvolve matrix multiplication over the 0.5C algorithm**.
+The repository is the supplementary material for the paper:   
+- Napoli, E. *"Full Precision Hardware Implementation of the AlphaEvolve 4×4 Complex Valued Matrix Multiplication Algorithm,"* in IEEE Access, vol. 14, 2026, doi:10.1109/ACCESS.2026.3690301. 
 
 ## Contents
 
@@ -34,5 +36,6 @@ Commercial use is prohibited without explicit permission from the author.
 
 If you use this repository in your work, please cite it as:  
 
+- Napoli, E. *"Full Precision Hardware Implementation of the AlphaEvolve 4×4 Complex Valued Matrix Multiplication Algorithm,"* in IEEE Access, vol. 14, 2026, doi:10.1109/ACCESS.2026.3690301. 
 - Napoli, E. *Hardware Implementation of the AlphaEvolve 4×4 Matrix Multiplication Algorithm*. GitHub, 2025. Available at: [https://github.com/etnapoli/Hardware-implementation-AlphaEvolve-MatrixMul](https://github.com/etnapoli/Hardware-implementation-AlphaEvolve-MatrixMul)  
 
